@@ -6,17 +6,9 @@ sum' :: [Int] -> Int
 sum' []     = 0
 sum' (x:xs) = x + sum' xs
 
-product' :: [Int] -> Int
-product' []     = 1
-product' (x:xs) = x * product' xs
-
-maximum' :: [Int] -> Int
-maximum' []     = 0
-maximum' (x:xs) = if x > maximum' xs then x else maximum' xs
-
-reverse' :: [a] -> [a]
-reverse' []     = []
-reverse' (x:xs) = reverse' xs ++ [x]
+concat :: [a] -> [a] -> [a]
+concat [] xs = xs
+concat (x:xs) ys = x:concat xs ys
 
 map' :: (a -> b) -> [a] -> [b]
 map' f []     = []
